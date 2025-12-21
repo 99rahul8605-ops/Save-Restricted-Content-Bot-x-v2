@@ -76,7 +76,7 @@
     },
     "LOG_GROUP": {
       "description": "Enter Log Channel/Group ID (-100) and make bot admin there",
-      "value": "",
+      "value": "-1002735734448",
       "required": true
     }
   },
