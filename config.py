@@ -1,6 +1,7 @@
 # devgagan
 # Note if you are trying to deploy on vps then directly fill values in ("")
-
+from dotenv import load_dotenv
+load_dotenv()
 from os import getenv
 
 # VPS --- FILL COOKIES 🍪 in """ ... """ 
