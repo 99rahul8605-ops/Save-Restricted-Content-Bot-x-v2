@@ -279,7 +279,11 @@ async def get_msg(userbot, sender, edit_id, msg_link, i, message):
             progress=progress_bar,
             progress_args=("╭─────────────────────╮\n│      **__Downloading__...**\n├─────────────────────", edit, time.time())
         )
-        
+
+        if not file:
+            await app.edit_message_text(sender, edit_id, "**❌ Download failed. Please try again.**")
+            return
+
         caption = await get_final_caption(msg, sender)
 
         # Rename file
@@ -467,6 +471,11 @@ async def copy_message_with_chat_id(app, userbot, sender, chat_id, message_id, e
                 progress=progress_bar,
                 progress_args=("╭─────────────────────╮\n│      **__Downloading__...**\n├─────────────────────", edit, time.time())
             )
+
+            if not file:
+                await edit.edit("**❌ Download failed. Please try again.**")
+                return
+
             file = await rename_file(file, sender)
 
             if msg.photo:
