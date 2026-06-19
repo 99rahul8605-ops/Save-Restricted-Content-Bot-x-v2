@@ -136,7 +136,6 @@ async def initialize_userbot(user_id): # this ensure the single startup .. even 
                 api_id=API_ID,
                 api_hash=API_HASH,
                 device_model=device,
-                in_memory=True,
                 session_string=data.get("session")
             )
             await userbot.start()
